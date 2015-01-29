@@ -1,0 +1,7 @@
+*.exe
+*.o
+*.rra
+*.wav
+*.swp
+*.x.dSYM
+songlib/
