@@ -35,7 +35,22 @@ int main()
     b(4, Q, instrument, octave, "x--", "-x-", SX);
     c(1, H, instrument, octave);
     c(5, H, instrument, octave);
-    b(5, H, instrument, octave, "--x", "----x", "---x", SX);
+    b(5, H, instrument, octave, "x--", "--x", "-x-", SX);
+    b(6, W, instrument, octave, "x---", "-x--", "--x-", "---x", SX);
+    setKey(D);
+    b(4, H, instrument, octave, "--x", "--x", "xx-", "--x", SX);
+    b(1, H, instrument, octave, "-xx", "-xx", "x--", "-xx", SX);
+    c(5, Q, instrument, octave+1);
+    c(5, Q, instrument, octave+1);
+    c(5, Q, instrument, octave);
+    c(5, Q, instrument, octave+1);
+    b(6, H, instrument, octave, "x--", "--x", "--x", "-x-", SX);
+    ci1(6, Q, instrument, octave);
+    b(6, Q, instrument, octave, "x-x", SX);
+    b(4, H, instrument, octave, "x--", "--x", "--x", "-x-", SX);
+    ci2(1, Q, instrument, octave-1);
+    b(1, Q, instrument, octave, "x-x", SX);
+    cpower(5, W, instrument, octave);
 
     closeOutput();
 
