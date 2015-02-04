@@ -3,5 +3,6 @@
 *.rra
 *.wav
 *.swp
-*.x.dSYM
+*.dSYM/
 songlib/
+rraidentity
