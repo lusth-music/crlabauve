@@ -5,7 +5,7 @@
 #include "/usr/local/include/songlib/songlib.h"
 
 #define dir "/usr/local/share/samples/piano/"
-#define base "bright_"
+#define base "grand_"
 
 /* change PROGRAM_NAME and PROGRAM_VERSION appropriately */
 
@@ -36,7 +36,7 @@ main()
     play(I,instrument,octave,Ds);
     play(Q,instrument,octave,Cs);
     play(I,instrument,octave,E);
-    
+
     play(Q,instrument,octave,Ds);
     play(I,instrument,octave,Ds);
     play(Q,instrument,octave,Cs);
