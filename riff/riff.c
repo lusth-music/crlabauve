@@ -5,7 +5,7 @@
 #include "/usr/local/include/songlib/songlib.h"
 
 #define dir "/usr/local/share/samples/piano/"
-#define base "bright_"
+#define base "grand_"
 
 /* change PROGRAM_NAME and PROGRAM_VERSION appropriately */
 
