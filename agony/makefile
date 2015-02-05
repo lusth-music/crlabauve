@@ -30,4 +30,5 @@ rraidentity : rraidentity.c
 .PHONY : clean
 
 clean :
-		rm -f $(RRA)
+		rm -f $(RRA) *.wav mix.rra
+		rm -rf *.dSYM

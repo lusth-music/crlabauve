@@ -15,6 +15,7 @@ char *PROGRAM_VERSION = "0.01";
 int
 main()
     {
+    unsigned int i;
     int instrument;
     int octave = 4;
 
@@ -32,28 +33,28 @@ main()
     openOutput("cello.rra",0,0);
 
     /* intro */
-    play(Qd,instrument,octave,Ds);
-    play(Qd,instrument,octave,Cs);
+    for (i = 0; i < 2; i++)
+    {
+        n(1,Qd,instrument,octave-1,6);
+        n(1,Qd,instrument,octave-1,5);
+    }
+    /* end intro */
+
+    n(1,Qd,instrument,octave-1,6);
+    n(1,Qd,instrument,octave-1,5);
+
+    n(1,Qd,instrument,octave-1,6);
+    n(1,Qd,instrument,octave-1,5);
+
+    n(1,Wd,instrument,octave-1,4);
+
+    n(1,Qd,instrument,octave-1,6);
+    n(1,Qd,instrument,octave-1,5);
+
+    n(1,Qd,instrument,octave-1,6);
+    n(1,Qd,instrument,octave-1,5);
     
-    play(Qd,instrument,octave,Ds);
-    play(Qd,instrument,octave,Cs);
-    /* intro */
-
-    play(Qd,instrument,octave,Ds);
-    play(Qd,instrument,octave,Cs);
-
-    play(Qd,instrument,octave,Ds);
-    play(Qd,instrument,octave,Cs);
-
-    play(Wd,instrument,octave-1,B);
-
-    play(Qd,instrument,octave,Ds);
-    play(Qd,instrument,octave,Cs);
-
-    play(Qd,instrument,octave,Ds);
-    play(Qd,instrument,octave,Cs);
-    
-    play(Wd,instrument,octave-1,B);
+    n(1,Wd,instrument,octave-1,4);
 
     closeOutput();
 

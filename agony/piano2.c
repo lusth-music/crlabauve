@@ -15,6 +15,7 @@ char *PROGRAM_VERSION = "0.01";
 int
 main()
     {
+    unsigned int i;
     int instrument;
     int octave = 2;
 
@@ -32,56 +33,54 @@ main()
     openOutput("piano2.rra",0,0);
 
     /* intro */
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,B);
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,Gs);
+    for (i = 0; i < 2; i++)
+    {
+        n(1,Q,instrument,octave,4);
+        n(1,I,instrument,octave,4);
+        n(1,Q,instrument,octave,4);
+        n(1,I,instrument,octave,2);
+    }
+    /* end intro */
 
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,B);
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,Gs);
-    /* intro */
+    n(1,Q,instrument,octave,4);
+    n(1,I,instrument,octave,4);
+    n(1,Q,instrument,octave,4);
+    n(1,I,instrument,octave,2);
 
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,B);
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,Gs);
+    n(1,Q,instrument,octave,4);
+    n(1,I,instrument,octave,4);
+    n(1,Q,instrument,octave,4);
+    n(1,I,instrument,octave,2);
 
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,B);
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,Gs);
+    n(1,Q,instrument,octave,6);
+    n(1,I,instrument,octave,6);
+    n(1,Q,instrument,octave,5);
+    n(1,I,instrument,octave,5);
 
-    play(Q,instrument,octave+1,Ds);
-    play(I,instrument,octave+1,Ds);
-    play(Q,instrument,octave+1,Cs);
-    play(I,instrument,octave+1,Cs);
+    n(1,Q,instrument,octave,6);
+    n(1,I,instrument,octave,6);
+    n(1,Q,instrument,octave,5);
+    n(1,I,instrument,octave,5);
 
-    play(Q,instrument,octave+1,Ds);
-    play(I,instrument,octave+1,Ds);
-    play(Q,instrument,octave+1,Cs);
-    play(I,instrument,octave+1,Cs);
+    n(1,Q,instrument,octave,4);
+    n(1,I,instrument,octave,4);
+    n(1,Q,instrument,octave,4);
+    n(1,I,instrument,octave,2);
 
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,B);
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,Gs);
+    n(1,Q,instrument,octave,4);
+    n(1,I,instrument,octave,4);
+    n(1,Q,instrument,octave,4);
+    n(1,I,instrument,octave,2);
 
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,B);
-    play(Q,instrument,octave,B);
-    play(I,instrument,octave,Gs);
+    n(1,Q,instrument,octave,6);
+    n(1,I,instrument,octave,6);
+    n(1,Q,instrument,octave,5);
+    n(1,I,instrument,octave,5);
 
-    play(Q,instrument,octave+1,Ds);
-    play(I,instrument,octave+1,Ds);
-    play(Q,instrument,octave+1,Cs);
-    play(I,instrument,octave+1,Cs);
-
-    play(Q,instrument,octave+1,Ds);
-    play(I,instrument,octave+1,Ds);
-    play(Q,instrument,octave+1,Cs);
-    play(I,instrument,octave+1,Cs);
+    n(1,Q,instrument,octave,6);
+    n(1,I,instrument,octave,6);
+    n(1,Q,instrument,octave,5);
+    n(1,I,instrument,octave,5);
 
     closeOutput();
 
