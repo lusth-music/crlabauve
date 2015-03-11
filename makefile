@@ -1,6 +1,6 @@
 #Place the names of all your tracks here (as RRA filenames)
 
-RRA = riff.rra
+RRA = riff.rra bass.rra drums.rra
 INCLUDE=/usr/local/include/songlib/
 LIB=/usr/local/lib/
 
@@ -14,6 +14,12 @@ all : $(RRA)
 
 mix		: $(RRA)
 		rrafastmixer -a0.5 $(RRA) | rplay
+
+mix.rra		: $(RRA)
+		rrafastmixer -a0.5 $(RRA) > mix.rra
+
+playmix	: mix.rra
+		rplay mix.rra
 
 play	: $(RRA)
 		rplay $(RRA)

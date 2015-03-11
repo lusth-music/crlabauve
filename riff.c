@@ -4,18 +4,21 @@
 #include "/usr/local/include/songlib/util.h"
 #include "/usr/local/include/songlib/songlib.h"
 
-#define dir "/usr/local/share/samples/piano/"
-#define base "grand_"
+#define dir "/usr/local/share/samples/guitar-electric/"
+#define base "clean_"
 
 /* change PROGRAM_NAME and PROGRAM_VERSION appropriately */
 
 char *PROGRAM_NAME = "riff";
-char *PROGRAM_VERSION = "0.01";
+char *PROGRAM_VERSION = "0.02";
+
+void riff(int, int);
 
 int main()
 {
     int instrument;
-    int octave = 4;
+    int octave = 2;
+    int i;
 
     songInit();
 
@@ -25,11 +28,14 @@ int main()
     setTime(4,4);
     setStride(0.05);
     setSustain(0.99995);
-    setAmplitude(0.4);
+    setAmplitude(0.3);
 
     openOutput("riff.rra",0,0);
 
-    c(6, Hd, instrument, octave);
+    for (i = 0; i < 4; i++)
+        riff(instrument, octave);
+
+    /*c(6, Hd, instrument, octave);
     b(6, Q, instrument, octave, "--x", "-x-", "x--", SX);
     c(4, Q, instrument, octave);
     b(4, Q, instrument, octave, "x--", "-x-", SX);
@@ -50,9 +56,26 @@ int main()
     b(4, H, instrument, octave, "x--", "--x", "--x", "-x-", SX);
     ci2(1, Q, instrument, octave-1);
     b(1, Q, instrument, octave, "x-x", SX);
-    cpower(5, W, instrument, octave);
+    cpower(5, W, instrument, octave);*/
 
     closeOutput();
 
     return 0;
+}
+
+void riff(int instrument, int octave)
+{
+    c(6, Q, instrument, octave);
+    c(6, I, instrument, octave);
+    c(6, Q, instrument, octave);
+    c(6, I, instrument, octave);
+    c(6, I, instrument, octave);
+    c(6, I, instrument, octave);
+
+    c(4, Q, instrument, octave);
+    c(4, I, instrument, octave);
+    c(4, Q, instrument, octave);
+    c(4, I, instrument, octave);
+    c(4, I, instrument, octave);
+    c(4, I, instrument, octave);
 }
