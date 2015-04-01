@@ -24,6 +24,9 @@ playmix	: mix.rra
 play	: $(RRA)
 		rplay $(RRA)
 
+uketest : uketest.rra
+		rplay uketest.rra
+
 .PHONY : clean
 
 clean :

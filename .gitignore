@@ -4,5 +4,7 @@
 *.wav
 *.swp
 *.dSYM/
-songlib/
 rraidentity
+ukulele/
+!ukulele_wav/*.wav
+
