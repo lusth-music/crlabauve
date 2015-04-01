@@ -18,6 +18,8 @@ int main()
 {
     int instrument;
     int octave;
+    int loOctave = 2;
+    int hiOctave = 6;
     int i;
 
     songInit();
@@ -32,9 +34,10 @@ int main()
 
     openOutput("uketest.rra",0,0);
 
-    for (octave = 2; octave < 7; octave++)
+    for (octave = loOctave; octave <= hiOctave; octave++)
         for (i = 0; i < 7; i++)
             n(1, I, instrument, octave, i);
+    n(1, I, instrument, hiOctave + 1, 0);
 
     closeOutput();
 
