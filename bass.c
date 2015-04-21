@@ -10,7 +10,7 @@
 /* change PROGRAM_NAME and PROGRAM_VERSION appropriately */
 
 char *PROGRAM_NAME = "bass";
-char *PROGRAM_VERSION = "0.02";
+char *PROGRAM_VERSION = "0.03";
 
 void riff(int, int);
 
@@ -24,11 +24,11 @@ int main()
 
     instrument = readScale(dir,base);
 
-    setTempo(132);
+    setTempo(110);
     setTime(4,4);
     setStride(0.05);
     setSustain(0.99995);
-    setAmplitude(0.2);
+    setAmplitude(0.3);
 
     openOutput("bass.rra",0,0);
 
@@ -42,7 +42,7 @@ int main()
 
 void riff(int instrument, int octave)
 {
-    n(1,Q,instrument,octave,5);
+    /*n(1,Q,instrument,octave,5);
     n(1,Q,instrument,octave,5);
     n(1,Q,instrument,octave,5);
     n(1,Q,instrument,octave,2);
@@ -51,5 +51,15 @@ void riff(int instrument, int octave)
     n(1,Q,instrument,octave+1,0);
     n(1,I,instrument,octave,6);
     n(1,I,instrument,octave,6);
-    n(1,Q,instrument,octave,4);
+    n(1,Q,instrument,octave,4);*/
+
+    n(1,Hd-I,instrument,octave-1,5);
+    n(1,I,instrument,octave,1);
+    n(1,I,instrument,octave,2);
+    n(1,Qd,instrument,octave,3);
+    n(1,Q,instrument,octave,2);
+    n(1,I,instrument,octave,1);
+    n(1,Q,instrument,octave,0);
+    n(1,Hd,instrument,octave-1,4);
+    b(1,Qd,instrument,octave-1, "-x-", "--x", SX);
 }

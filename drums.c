@@ -24,7 +24,7 @@ int main()
 
     instrument = readScale(dir,base);
 
-    setTempo(132);
+    setTempo(110);
     setTime(4,4);
     setStride(0.05);
     setSustain(0.99995);
@@ -32,7 +32,8 @@ int main()
 
     openOutput("drums.rra",0,0);
 
-    for (i = 0; i < 8; i++)
+    rest(3*W);
+    for (i = 0; i < 11; i++)
         riff(instrument, octave);
 
     closeOutput();

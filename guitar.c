@@ -9,8 +9,8 @@
 
 /* change PROGRAM_NAME and PROGRAM_VERSION appropriately */
 
-char *PROGRAM_NAME = "riff";
-char *PROGRAM_VERSION = "0.02";
+char *PROGRAM_NAME = "guitar";
+char *PROGRAM_VERSION = "0.03";
 
 void riff(int, int);
 
@@ -24,15 +24,16 @@ int main()
 
     instrument = readScale(dir,base);
 
-    setTempo(132);
+    setTempo(110);
     setTime(4,4);
     setStride(0.05);
     setSustain(0.99995);
     setAmplitude(0.3);
 
-    openOutput("riff.rra",0,0);
+    openOutput("guitar.rra",0,0);
 
-    for (i = 0; i < 4; i++)
+    rest(6*W);
+    for (i = 0; i < 3; i++)
         riff(instrument, octave);
 
     /*c(6, Hd, instrument, octave);
@@ -65,17 +66,15 @@ int main()
 
 void riff(int instrument, int octave)
 {
-    c(6, Q, instrument, octave);
-    c(6, I, instrument, octave);
-    c(6, Q, instrument, octave);
-    c(6, I, instrument, octave);
-    c(6, I, instrument, octave);
-    c(6, I, instrument, octave);
+    b(6, Q, instrument, octave, "x--", SX);
+    b(6, I, instrument, octave, "--x", SX);
+    b(6, Q, instrument, octave, "-x-", SX);
+    b(6, I, instrument, octave, "--x", SX);
+    cchord(4, Q, instrument, octave, "x-x");
 
-    c(4, Q, instrument, octave);
-    c(4, I, instrument, octave);
-    c(4, Q, instrument, octave);
-    c(4, I, instrument, octave);
-    c(4, I, instrument, octave);
-    c(4, I, instrument, octave);
+    b(1, Q, instrument, octave, "x--", SX);
+    b(1, I, instrument, octave, "--x", SX);
+    b(1, Q, instrument, octave, "-x-", SX);
+    b(1, I, instrument, octave, "--x", SX);
+    cchord(5, Q, instrument, octave, "x-x");
 }
