@@ -4,20 +4,20 @@
 #include "/usr/local/include/songlib/util.h"
 #include "/usr/local/include/songlib/songlib.h"
 
-#define dir "/usr/local/share/samples/bass/"
-#define base "epiphone_1_"
+#define dir "/usr/local/share/samples/cello/"
+#define base "drawn_"
 
 /* change PROGRAM_NAME and PROGRAM_VERSION appropriately */
 
 char *PROGRAM_NAME = "bass";
 char *PROGRAM_VERSION = "0.03";
 
-void riff(int, int);
+void intro(int, int);
 
 int main()
 {
     int instrument;
-    int octave = 2;
+    int octave = 4;
     int i;
 
     songInit();
@@ -33,14 +33,14 @@ int main()
     openOutput("bass.rra",0,0);
 
     for (i = 0; i < 4; i++)
-        riff(instrument, octave);
+        intro(instrument, octave);
 
     closeOutput();
 
     return 0;
 }
 
-void riff(int instrument, int octave)
+void intro(int instrument, int octave)
 {
     /*n(1,Q,instrument,octave,5);
     n(1,Q,instrument,octave,5);
@@ -53,7 +53,7 @@ void riff(int instrument, int octave)
     n(1,I,instrument,octave,6);
     n(1,Q,instrument,octave,4);*/
 
-    n(1,Hd-I,instrument,octave-1,5);
+    n(1,H+I,instrument,octave-1,5);
     n(1,I,instrument,octave,1);
     n(1,I,instrument,octave,2);
     n(1,Qd,instrument,octave,3);
